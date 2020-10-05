@@ -1,0 +1,36 @@
+html,
+body,
+#root {
+    height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.form-header {
+    margin-bottom: 15px !important;
+}
+
+#login-form {
+    min-width: 400px;
+}
+
+.form-actions button {
+    margin-right: 10px;
+}
+
+.form-actions button:first-child {
+    margin: 0;
+}
+
+.form-footer {
+    margin-top: 20px !important;
+    text-align: center;
+}

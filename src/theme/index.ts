@@ -41,7 +41,7 @@ const theme = createMuiTheme({
     overrides: {
         MuiPaper: {
             root: {
-                padding: 15,
+                padding: 25,
             },
         },
         MuiTextField: {

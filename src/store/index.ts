@@ -1,10 +1,22 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, Action } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import authReducer from './auth/reducer'
+import { IApplicationState } from './types'
+import userReducer from './user/reducer'
 
-const reducer = combineReducers({
+const appReducer = combineReducers({
     auth: authReducer,
+    user: userReducer,
 })
 
-const store = createStore(reducer)
+const rootReducer = (state: IApplicationState | undefined, action: Action) => {
+    if (action.type === 'LOGOUT') {
+        state = undefined
+    }
+
+    return appReducer(state, action)
+}
+
+const store = createStore(rootReducer, composeWithDevTools())
 
 export default store
